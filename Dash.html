@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="Dash.css" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="SnowbirdLifts.json"></script> 
+<script type="text/javascript" src="AltaLifts.json"></script> 
+<script type="text/javascript" src="SnowbirdAreas.json"></script> 
+<script type="text/javascript" src="AltaAreas.json"></script> 
+<script type="text/javascript" src="SnowbirdRuns.json"></script> 
+<script type="text/javascript" src="Road.json"></script>
+</head>
+
+<body>
+<div id="rightBar">
+	<div id="currentTime"> </div>
+	
+	
+	
+	
+	<a class="weatherwidget-io" href="https://forecast7.com/en/40d59n111d64/alta/?unit=us" data-font="Helvetica" data-mode="Forecast" >Alta, UT, USA</a>
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+</script>
+<div id="road">Road</div>
+<div id="roadTable" class="table"> </div>
+</div>
+<div class="container">
+  <h1>Lifts</h1>
+  <div id="LiftsTable" class="table"> </div>
+  <h1>Areas</h1>
+  <div id="AreasTable" class="table"> </div>
+</div>
+</body>
+	
+	
+<script>
+	window.onload = function() {
+  	clock();  
+    function clock() {
+    var now = new Date();
+    var TwentyFourHour = now.getHours();
+    var hour = now.getHours();
+    var min = now.getMinutes();
+    var sec = now.getSeconds();
+    var mid = 'pm';
+    if (min < 10) {
+      min = "0" + min;
+    }
+    if (hour > 12) {
+      hour = hour - 12;
+    }    
+    if(hour==0){ 
+      hour=12;
+    }
+    if(TwentyFourHour < 12) {
+       mid = 'am';
+    }     
+  document.getElementById("currentTime").innerHTML =     hour+':'+min+' '+mid ;
+		    setTimeout(clock, 1000);
+    }
+}</script>
+<script>
+    var local_data = dataRoad;
+    var row_data = '';
+    for (var i = 0; i < local_data.length; i++) {
+		var row_data = row_data +
+				' <p>' + local_data[i].Status + '  </p>'
+				
+	}
+    var div_body_element = document.createElement('tbody');
+    div_body_element.innerHTML = row_data;
+    document.getElementById('roadTable').appendChild(div_body_element);
+  </script>
+<script>
+    var local_data = dataLifts;
+    var row_data = '';
+    for (var i = 0; i < local_data.length; i++) {
+		if (local_data[i].Status == 'Closed'){
+			var row_data = row_data +
+				' <p id=closed>' + local_data[i].Name + '</p>'
+			}	else if(local_data[i].Status == 'Open'){
+					var row_data = row_data +
+				' <p id=open>' + local_data[i].Name + '<br></p>'
+			}
+		else {
+				var row_data = row_data +
+				' <p id=pending>' + local_data[i].Name + '<br></p>'
+			}
+		
+	
+	}
+    var div_body_element = document.createElement('tbody');
+    div_body_element.innerHTML = row_data;
+    document.getElementById('LiftsTable').appendChild(div_body_element);
+  </script>
+<script>
+    var local_data = dataAltaLifts;
+    var row_data = '';
+    for (var i = 0; i < local_data.length; i++) {
+		if (local_data[i].Status == 'Closed'){
+			var row_data = row_data +
+				' <p id=closed>' + local_data[i].Name + '  </p>'
+			}	else if(local_data[i].Status == 'Open'){
+					var row_data = row_data +
+				' <p id=open>' + local_data[i].Name + '  </p>'
+			}
+		else {
+				var row_data = row_data +
+				' <p id=pending>' + local_data[i].Name + '  </p>'
+			}
+		
+	
+	}
+    var div_body_element = document.createElement('tbody');
+    div_body_element.innerHTML = row_data;
+    document.getElementById('LiftsTable').appendChild(div_body_element);
+  </script>
+<script>
+    var local_data = dataAreas;
+    var row_data = '';
+    for (var i = 0; i < local_data.length; i++) {
+		if (local_data[i].Status == 'Closed'){
+			var row_data = row_data +
+				' <p id=closed>' + local_data[i].Name + '  </p>'
+			}	else if(local_data[i].Status == 'Open'){
+					var row_data = row_data +
+				' <p id=open>' + local_data[i].Name + '  </p>'
+			}
+		else {
+				var row_data = row_data +
+				' <p id=pending>' + local_data[i].Name + '  </p>'
+			}
+		
+	
+	}
+    var div_body_element = document.createElement('tbody');
+    div_body_element.innerHTML = row_data;
+    document.getElementById('AreasTable').appendChild(div_body_element);
+  </script>
+<script>
+    var local_data = dataAltaAreas;
+    var row_data = '';
+    for (var i = 0; i < local_data.length; i++) {
+		if (local_data[i].Status == 'CLOSED'){
+			var row_data = row_data +
+				' <p id=closed>' + local_data[i].Name + '  </p>'
+			}	else if(local_data[i].Status == 'OPEN'){
+					var row_data = row_data +
+				' <p id=open>' + local_data[i].Name + '  </p>'
+			}
+		else {
+				var row_data = row_data +
+				' <p id=pending>' + local_data[i].Name + '  </p>'
+			}
+		
+	
+	}
+    var div_body_element = document.createElement('tbody');
+    div_body_element.innerHTML = row_data;
+    document.getElementById('AreasTable').appendChild(div_body_element);
+  </script>
+<script>
+    var local_data = dataRuns;
+    var row_data = '';
+    for (var i = 0; i < local_data.length; i++) {
+		if (local_data[i].Status == 'Closed'){
+			var row_data = row_data +
+				' <p id=closed>' + local_data[i].Name + '  </p>'
+			}	else if(local_data[i].Status == 'Open'){
+					var row_data = row_data +
+				' <p id=open>' + local_data[i].Name + '  </p>'
+			}
+		else {
+				var row_data = row_data +
+				' <p id=pending>' + local_data[i].Name + '  </p>'
+			}
+		
+	
+	}
+    var div_body_element = document.createElement('tbody');
+    div_body_element.innerHTML = row_data;
+    document.getElementById('RunsTable').appendChild(div_body_element);
+  </script>
+<script>
+    var local_data = dataWeather;
+    var row_data = '';
+    for (var i = 0; i < local_data.length; i++) {
+		if (local_data[i].Status == 'Closed'){
+			var row_data = row_data +
+				' <p id=closed>' + local_data[i].Name + '</p>'
+			}	else if(local_data[i].Status == 'Open'){
+					var row_data = row_data +
+				' <p id=open>' + local_data[i].Name + '</p>'
+			}
+		else {
+				var row_data = row_data +
+				' <p id=pending>' + local_data[i].Name + '</p>'
+			}
+		
+	
+	}
+    var div_body_element = document.createElement('tbody');
+    div_body_element.innerHTML = row_data;
+    document.getElementById('RunsTable').appendChild(div_body_element);
+  </script>
+</html>

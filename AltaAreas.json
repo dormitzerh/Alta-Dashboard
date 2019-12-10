@@ -1,0 +1,10 @@
+var dataAltaAreas = [
+{"Status": ["OPEN"], "Name": ["Ballroom/Baldy Shoulder"]},
+{"Status": ["OPEN"], "Name": ["Backside"]},
+{"Status": ["CLOSED"], "Name": ["Devil’s Castle"]},
+{"Status": ["CLOSED"], "Name": ["Mount Baldy"]},
+{"Status": ["CLOSED"], "Name": ["East Castle"]},
+{"Status": ["OPEN"], "Name": ["Catherine’s Area"]},
+{"Status": ["OPEN"], "Name": ["Summer Road"]},
+{"Status": ["OPEN"], "Name": ["EBT/Collins Return"]}
+]

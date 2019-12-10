@@ -1,0 +1,31 @@
+#!/bin/bash
+while true
+do
+cd ~/Documents/AltaDash/scraper
+
+#rm SnowbirdRuns.json
+#scrapy crawl SnowbirdRuns -o SnowbirdRuns.json
+#sed -i '' -e "1s/.*/var dataRuns = [/" SnowbirdRuns.json
+
+rm SnowbirdAreas.json
+scrapy crawl SnowbirdAreas -o SnowbirdAreas.json
+sed -i '' -e "1s/.*/var dataAreas = [/" SnowbirdAreas.json
+
+rm SnowbirdLifts.json
+scrapy crawl SnowbirdLifts -o SnowbirdLifts.json
+sed -i '' -e "1s/.*/var dataLifts = [/" SnowbirdLifts.json
+
+rm AltaLifts.json
+scrapy crawl AltaLifts -o AltaLifts.json
+sed -i '' -e "1s/.*/var dataAltaLifts = [/" AltaLifts.json
+
+rm AltaAreas.json
+scrapy crawl AltaAreas -o AltaAreas.json
+sed -i '' -e "1s/.*/var dataAltaAreas = [/" AltaAreas.json
+
+rm Road.json
+scrapy crawl Road -o Road.json
+sed -i '' -e "1s/.*/var dataRoad = [/" Road.json
+
+sleep 300
+done

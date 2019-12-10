@@ -1,0 +1,8 @@
+var dataAreas = [
+{"Status": ["Closed"], "Name": ["Mineral Basin"]},
+{"Status": ["Closed"], "Name": ["Road to Provo"]},
+{"Status": ["Closed"], "Name": ["Gad 2 Boundary"]},
+{"Status": ["Open"], "Name": ["Peruvian Gulch"]},
+{"Status": ["Open"], "Name": ["Cirque Traverse"]},
+{"Status": ["Open"], "Name": ["Baldy"]}
+]

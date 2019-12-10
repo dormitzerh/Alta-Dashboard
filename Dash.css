@@ -1,0 +1,85 @@
+@charset "UTF-8";
+* {
+   margin: 0px;
+   padding: 0px;
+}
+/* CSS Document */
+body{
+	background-image: url('https://media.alta.com/resources/mtncam/Greeley.jpg');
+	background-attachment: fixed; 
+ 	background-size: cover;
+	background-repeat: no-repeat;
+}
+h1{
+	font-size: 24px;
+	margin-bottom: 1px
+}
+
+#rightBar {
+	font-family: "Helvetica", Arial, "sans-serif";
+	font-weight: Bold;
+	float: right;
+	margin: 0px;
+	width: 350px;
+	font-size: 90px;
+	padding: 0px;
+	background-color: rgba(255,255,255,.8);
+	padding-right: 10px;
+	height: 100vh;
+	
+}
+
+#road{
+font-size: 24pt;	
+text-align: right;
+	padding-top: 10px;
+}
+
+#roadTable{
+font-size: 13pt;	
+text-align: right;
+font-weight: normal;
+float: right;
+	padding-top: 0px;
+	margin-top: 0px;
+}
+
+#LiftsTable{
+	margin-bottom: 10px;
+}
+#currentTime{
+	text-align: right;
+	font-size: 59pt;
+	padding-bottom: 10px;
+}
+
+.weatherwidget-io{
+	padding-top: 10px; 
+}
+.container {
+	padding-top: 15px; 
+	font-family: Univers,"Helvetica", "Arial", "sans-serif";
+	width: 100px;
+	background-color: rgba(255,255,255,.8);
+	padding-left: 10px;
+	height: 100vh;
+}
+
+
+p {
+  padding: 4px;
+  margin: 0px;
+  font-size: 13px;
+}
+
+#pending{
+	text-decoration: un;
+}
+
+#closed{
+	text-decoration: line-through;
+}
+
+#open{
+		text-decoration: none;
+}

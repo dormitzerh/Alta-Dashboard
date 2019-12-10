@@ -1,0 +1,14 @@
+var dataLifts = [
+{"Status": ["Open"], "Name": ["Aerial Tram"]},
+{"Status": ["Open"], "Name": ["Gadzoom"]},
+{"Status": ["Open"], "Name": ["Chickadee"]},
+{"Status": ["Closed"], "Name": ["Mid-Gad"]},
+{"Status": ["Closed"], "Name": ["Gad 2"]},
+{"Status": ["Open"], "Name": ["Wilbere"]},
+{"Status": ["Closed"], "Name": ["Peruvian"]},
+{"Status": ["Closed"], "Name": ["Baby Thunder"]},
+{"Status": ["Open"], "Name": ["Little Cloud"]},
+{"Status": ["Closed"], "Name": ["Mineral Basin"]},
+{"Status": ["Closed"], "Name": ["Peruvian Tunnel"]},
+{"Status": ["Closed"], "Name": ["Baldy"]}
+]

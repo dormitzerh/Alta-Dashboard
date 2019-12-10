@@ -1,0 +1,8 @@
+var dataAltaLifts = [
+{"Status": ["Open"], "Name": ["Wildcat"]},
+{"Status": ["Open"], "Name": ["Collins"]},
+{"Status": ["Open"], "Name": ["Sugarloaf"]},
+{"Status": ["Closed"], "Name": ["Supreme"]},
+{"Status": ["Open"], "Name": ["Sunnyside"]},
+{"Status": ["Closed"], "Name": ["Albion"]}
+]
